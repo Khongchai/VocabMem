@@ -1,3 +1,5 @@
+import { Box, color } from "@chakra-ui/react";
+
 export default function Home() {
-  return <div>Hello world</div>;
+  return <Box color="peach">Hello world</Box>;
 }
