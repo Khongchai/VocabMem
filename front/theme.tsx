@@ -18,10 +18,17 @@ const Input = {
       color: "softGreen",
     },
   },
-  defaultProps: {
-    colorScheme: "softGreen",
-  },
 };
 
-const theme = extendTheme({ colors, components: { Input } });
+const theme = extendTheme({
+  styles: {
+    global: {
+      "#checkbox": {
+        cursor: "pointer",
+      },
+    },
+  },
+  colors,
+  components: { Input },
+});
 export default theme;

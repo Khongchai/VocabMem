@@ -1,19 +1,30 @@
-import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Text, Link } from "@chakra-ui/react";
+import Checkbox from "../components/Checkbox";
 import { Form, Formik } from "formik";
-import { Input } from "@chakra-ui/react";
 import React from "react";
 import { InputField } from "../components/InputField";
+import Button from "../components/Button";
+import NextLink from "next/link";
+import CatSVG from "../public/loginGraphics/CatInSpaceSVG";
 
 interface loginProps {}
 
 export const Login: React.FC<loginProps> = ({}) => {
   return (
-    <Grid placeItems="center" w="100%" h="100vh">
-      <Flex w={950} h={600}>
-        <FormSection></FormSection>
-        <GraphicsSection></GraphicsSection>
-      </Flex>
-    </Grid>
+    <>
+      <Grid placeItems="center" w="100%" h="100vh">
+        <Flex
+          w={["100%", 450, 950]}
+          pl={5}
+          pr={5}
+          h={600}
+          flexDir={{ base: "column", md: "row" }}
+        >
+          <FormSection />
+          <GraphicsSection />
+        </Flex>
+      </Grid>
+    </>
   );
 };
 
@@ -21,48 +32,55 @@ interface formSectionProps {}
 
 const FormSection: React.FC<formSectionProps> = ({}) => {
   return (
-    <Box flex={1}>
-      <Formik
-        initialValues={{ usernameOrEmail: "", password: "" }}
-        onSubmit={async (values) => {
-          console.log(values);
-          return {
-            usernameOrEmail: values.usernameOrEmail,
-            password: values.password,
-          };
-        }}
-      >
-        {(props) => (
-          <Form>
-            <InputField
-              name="usernameOrEmail"
-              placeholder="Username Or Email"
-              label="Username Or Email"
-            />
-            <InputField
-              name="password"
-              placeholder="Password"
-              label="Password"
-            />
-            <Button
-              d="block"
-              p="relative"
-              m="0 auto"
-              mt={4}
-              boxShadow="0px 8px 24px rgba(0, 0, 0, 0.15)"
-              isLoading={props.isSubmitting}
-              color="white"
-              bg="softGreen"
-              _hover={{ bg: "lightGreen", color: "darkGreen" }}
-              type="submit"
-              w="400px"
-              h={16}
-            >
-              Login
-            </Button>
-          </Form>
-        )}
-      </Formik>
+    <Box flex={1} d="flex" flexDir="column">
+      <Box>
+        <Text
+          fontSize="43px"
+          color="softGreen"
+          fontWeight={"bold"}
+          mt={"-40px"}
+          mb={"50px"}
+        >
+          Login
+        </Text>
+        <Formik
+          initialValues={{
+            usernameOrEmail: "",
+            password: "",
+            rememberMe: false,
+          }}
+          onSubmit={async (values) => {
+            console.log(values);
+            return {
+              ...values,
+            };
+          }}
+        >
+          {(props) => (
+            <Form>
+              <InputField
+                name="usernameOrEmail"
+                placeholder="Username Or Email"
+                label="Username Or Email"
+              />
+              <InputField
+                name="password"
+                placeholder="Password"
+                label="Password"
+              />
+              <Checkbox name="rememberMe" label="Remember me" />
+
+              <Button isLoading={props.isSubmitting}>Login</Button>
+            </Form>
+          )}
+        </Formik>
+      </Box>
+      <Box mt={"auto"} textAlign="center" color="softGreen">
+        Don't have an account?{" "}
+        <NextLink href="/forgot-password">
+          <Link textDecor="underline">sign up</Link>
+        </NextLink>
+      </Box>
     </Box>
   );
 };
@@ -70,7 +88,11 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
 interface graphicSectionProps {}
 
 const GraphicsSection: React.FC<graphicSectionProps> = ({}) => {
-  return <Box flex={1}></Box>;
+  return (
+    <Box flex={[0.5, 1]} ml={10}>
+      <CatSVG />
+    </Box>
+  );
 };
 
 export default Login;
