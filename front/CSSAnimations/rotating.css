@@ -1,0 +1,31 @@
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+    transform: translateX(10);
+  }
+  100% {
+    transform: rotate(-359deg);
+    transform: translateX(20);
+  }
+}
+
+@keyframes rotating2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+#floating-cat {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: rotating 80s infinite cubic-bezier(0.39, 0.12, 0.75, 0.94);
+}
+
+#starfield {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: rotating2 120s infinite linear;
+}

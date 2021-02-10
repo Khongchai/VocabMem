@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme";
 import fonts from "../public/fonts/font-face";
 import { Global } from "@emotion/react";
+import "../CSSAnimations/rotating.css";
 
 function MyApp({ Component, pageProps }: any) {
   return (

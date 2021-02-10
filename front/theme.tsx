@@ -26,6 +26,9 @@ const theme = extendTheme({
       "#checkbox": {
         cursor: "pointer",
       },
+      "html, body": {
+        fontFamily: "Selawik Regular",
+      },
     },
   },
   colors,

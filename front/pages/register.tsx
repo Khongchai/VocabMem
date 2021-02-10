@@ -1,15 +1,12 @@
-import { Box, Flex, Grid, Text, Link } from "@chakra-ui/react";
-import Checkbox from "../components/Checkbox";
+import { Box, Flex, Grid, Link, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
-import React from "react";
-import { InputField } from "../components/InputField";
-import Button from "../components/Button";
 import NextLink from "next/link";
-import CatSVG from "../public/loginGraphics/CatInSpaceSVG";
+import React from "react";
+import Button from "../components/Button";
+import { InputField } from "../components/InputField";
+import BookSVG from "../public/RegisterGraphics/BookSVG";
 
-interface loginProps {}
-
-export const Login: React.FC<loginProps> = ({}) => {
+export const Register: React.FC<{}> = ({}) => {
   return (
     <>
       <Grid placeItems="center" w="100%" h="100vh">
@@ -42,12 +39,13 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
           mb={"50px"}
         >
           <Text as="h1" fontFamily="Selawik">
-            Login
+            Register
           </Text>
         </Text>
         <Formik
           initialValues={{
-            usernameOrEmail: "",
+            email: "",
+            username: "",
             password: "",
             rememberMe: false,
           }}
@@ -61,9 +59,15 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
           {(props) => (
             <Form>
               <InputField
-                name="usernameOrEmail"
-                placeholder="Username Or Email"
-                label="Username Or Email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                label="email"
+              />
+              <InputField
+                name="username"
+                placeholder="Username"
+                label="username"
               />
               <InputField
                 name="password"
@@ -71,20 +75,19 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
                 label="Password"
                 type="password"
               />
-              <Checkbox name="rememberMe" label="Remember me" />
 
-              <Button desc="Forgot password?" isLoading={props.isSubmitting}>
-                Login
+              <Button desc="" isLoading={props.isSubmitting}>
+                Register
               </Button>
             </Form>
           )}
         </Formik>
       </Box>
       <Box mt={"auto"} textAlign="center" color="softGreen">
-        Don't have an account?{" "}
-        <NextLink href="/register">
+        Already have an account?{" "}
+        <NextLink href="/login">
           <Link textDecor="underline">
-            <strong>Register</strong>
+            <strong>Sign in</strong>
           </Link>
         </NextLink>
       </Box>
@@ -103,9 +106,9 @@ const GraphicsSection: React.FC<graphicSectionProps> = ({}) => {
       alignContent="center"
       ml={[0, 10]}
     >
-      <CatSVG />
+      <BookSVG />
     </Box>
   );
 };
 
-export default Login;
+export default Register;

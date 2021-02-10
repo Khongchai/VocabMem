@@ -2,10 +2,10 @@ import { Box, Button, Flex, Link } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
 
-export const ButtonComponent: React.FC<{ isLoading: boolean }> = ({
-  isLoading,
-  ...props
-}) => {
+export const ButtonComponent: React.FC<{
+  isLoading: boolean;
+  desc: string;
+}> = ({ isLoading, desc, ...props }) => {
   return (
     <Box w="80%" d="block" p="relative" m="0 auto">
       <Button
@@ -24,7 +24,7 @@ export const ButtonComponent: React.FC<{ isLoading: boolean }> = ({
       <Flex>
         <NextLink href="/forgot-password">
           <Link mt={1} color="softGreen">
-            Forgot password?
+            {desc}
           </Link>
         </NextLink>
       </Flex>

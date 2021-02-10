@@ -17,13 +17,14 @@ export const InputField: React.FC<InputFieldProps> = ({
   return (
     <FormControl isInvalid={!!error}>
       <Input
-        _placeholder={{ color: "softGreen", opacity: 0.5 }}
+        _placeholder={{ color: "darkGreen", opacity: 0.5 }}
         h="65px"
         mb="25px"
         boxShadow="0px 8px 24px rgba(0, 0, 0, 0.15)"
         {...props}
         {...field}
         label={label}
+        color="darkGreen"
         id={field.name}
         _focus={{ boxShadow: "0 0 0 2px softGreen !important" }}
         borderRadius="5px"
