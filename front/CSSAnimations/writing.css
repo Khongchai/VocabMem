@@ -1,0 +1,76 @@
+@keyframes writingX {
+  0% {
+    transform: translateX(-101px);
+  }
+  70% {
+    transform: translateX(63px);
+  }
+  100% {
+    transform: translateX(-101px);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  8% {
+    transform: rotate(-3deg);
+  }
+  18% {
+    transform: rotate(-1deg);
+  }
+  27% {
+    transform: rotate(-6deg);
+  }
+  36% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-5deg);
+  }
+  54% {
+    transform: rotate(-1deg);
+  }
+  63% {
+    transform: rotate(-6deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes changeline {
+  0% {
+    transform: rotate(5deg) translateY(0px);
+  }
+  37% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(5deg) translateY(50px);
+  }
+  80% {
+    transform: rotate(0deg) translateY(50px);
+  }
+  100% {
+    transform: rotate(5deg) translateY(0px);
+  }
+}
+#pencil-svg,
+#pencil-svg-container,
+#pencil-svg-container-container {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#pencil-svg {
+  /* 20 seconds, 5 seconds per each line */
+  animation: changeline 10s infinite cubic-bezier(0.89, 0.67, 0.78, 1);
+}
+
+#pencil-svg-container {
+  animation: writingX 5s cubic-bezier(0.89, 0.67, 0.78, 1) infinite;
+}
+
+#pencil-svg-container-container {
+  animation: 5s wiggle linear infinite;
+}

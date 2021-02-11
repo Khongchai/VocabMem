@@ -4,7 +4,8 @@ import NextLink from "next/link";
 import React from "react";
 import Button from "../components/Button";
 import { InputField } from "../components/InputField";
-import BookSVG from "../public/RegisterGraphics/BookSVG";
+import PencilWritingBook from "../public/RegisterGraphics/pencilWritingBook";
+import BookSVG from "../public/RegisterGraphics/svgComponents/BookSVG";
 
 export const Register: React.FC<{}> = ({}) => {
   return (
@@ -106,7 +107,7 @@ const GraphicsSection: React.FC<graphicSectionProps> = ({}) => {
       alignContent="center"
       ml={[0, 10]}
     >
-      <BookSVG />
+      <PencilWritingBook />
     </Box>
   );
 };

@@ -4,6 +4,7 @@ import theme from "../theme";
 import fonts from "../public/fonts/font-face";
 import { Global } from "@emotion/react";
 import "../CSSAnimations/rotating.css";
+import "../CSSAnimations/writing.css";
 
 function MyApp({ Component, pageProps }: any) {
   return (
