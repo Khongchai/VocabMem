@@ -6,7 +6,12 @@ import Pencil from "./svgComponents/Pencil";
 import Book from "./svgComponents/Book";
 export default function CatSVG() {
   return (
-    <svg viewBox="0 0 785 835" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="100%"
+      viewBox="0 0 785 835"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <Background />
       <Starfield />
       <Cat />

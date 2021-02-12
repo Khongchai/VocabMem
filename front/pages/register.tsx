@@ -36,12 +36,11 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
           fontSize="43px"
           color="softGreen"
           fontWeight={"bold"}
-          mt={"-40px"}
-          mb={"50px"}
+          mb={"30px"}
+          as="h1"
+          fontFamily="Selawik"
         >
-          <Text as="h1" fontFamily="Selawik">
-            Register
-          </Text>
+          Register
         </Text>
         <Formik
           initialValues={{
@@ -84,7 +83,7 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
           )}
         </Formik>
       </Box>
-      <Box mt={"auto"} textAlign="center" color="softGreen">
+      <Box mt={["10px", null, "auto"]} textAlign="center" color="softGreen">
         Already have an account?{" "}
         <NextLink href="/login">
           <Link textDecor="underline">
@@ -105,7 +104,9 @@ const GraphicsSection: React.FC<graphicSectionProps> = ({}) => {
       display="flex"
       justifyContent="center"
       alignContent="center"
-      ml={[0, 10]}
+      mt={2}
+      ml={[0, 0, 10]}
+      paddingBottom={[2, 2, 0]}
     >
       <PencilWritingBook />
     </Box>

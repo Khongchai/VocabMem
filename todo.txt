@@ -1,0 +1,6 @@
+Front:
+    REplace the stars in the background with words, maybe?
+    Maybe there's already a beter way of doing the "betterUpdateQuery"?
+    Try use Urql's native useMutation before using code generator to see what's gonna happen.
+Back: 
+    Find a way to create a user; this user will be able to access the all user query and other query that exposes information.

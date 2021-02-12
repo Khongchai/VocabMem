@@ -6,6 +6,7 @@ import { InputField } from "../components/InputField";
 import Button from "../components/Button";
 import NextLink from "next/link";
 import CatSVG from "../public/loginGraphics/CatInSpaceSVG";
+import { useMutation } from "urql";
 
 interface loginProps {}
 
@@ -38,12 +39,11 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
           fontSize="43px"
           color="softGreen"
           fontWeight={"bold"}
-          mt={"-40px"}
-          mb={"50px"}
+          mb={"30px"}
+          as="h1"
+          fontFamily="Selawik"
         >
-          <Text as="h1" fontFamily="Selawik">
-            Login
-          </Text>
+          Login
         </Text>
         <Formik
           initialValues={{
@@ -62,7 +62,7 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
             <Form>
               <InputField
                 name="usernameOrEmail"
-                placeholder="Username Or Email"
+                placeholder="Username or Email"
                 label="Username Or Email"
               />
               <InputField
@@ -80,7 +80,7 @@ const FormSection: React.FC<formSectionProps> = ({}) => {
           )}
         </Formik>
       </Box>
-      <Box mt={"auto"} textAlign="center" color="softGreen">
+      <Box mt={["auto"]} textAlign="center" color="softGreen">
         Don't have an account?{" "}
         <NextLink href="/register">
           <Link textDecor="underline">
@@ -97,11 +97,15 @@ interface graphicSectionProps {}
 const GraphicsSection: React.FC<graphicSectionProps> = ({}) => {
   return (
     <Box
-      flex={[0.5, 1]}
-      display="flex"
+      flex={[null, null, 1]}
+      display={["none", null, "flex"]}
       justifyContent="center"
       alignContent="center"
       ml={[0, 10]}
+      position={["relative"]}
+      top="-85px"
+      right="-74px"
+      zIndex="-1"
     >
       <CatSVG />
     </Box>

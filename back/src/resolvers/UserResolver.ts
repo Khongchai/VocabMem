@@ -1,6 +1,5 @@
 import argon2 from "argon2";
 import { Arg, Ctx, Mutation, Query, Resolver } from "type-graphql";
-import { getConnection } from "typeorm";
 import { User } from "../entities/User";
 import { Context } from "../types";
 import validateLogin from "../utils/validateLogin";
